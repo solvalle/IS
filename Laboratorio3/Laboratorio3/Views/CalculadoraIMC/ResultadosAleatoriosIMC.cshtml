@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "IMC Aleatorio";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Resultados IMC </title>
+    <meta charset="utf-8" />
+    <!--Esto es un comentario-->
+    <!--En el head se coloca información que es para el navegador, scripts, css...-->
+</head>
+<body>
+    <h1> Resultados </h1>
+    <div class="seccion_1" id="s1">
+        <ul>
+            <li>IMC menor que 18.5 -> peso suficiente</li>
+            <li>IMC entre 18.5 y 24.9 -> peso normal</li>
+            <li>IMC mayor que 25 -> sobrepeso</li>
+        </ul>
+        <hr />
+    </div>
+
+    <div class="seccion_2" id="s2">
+        <a class="btn btn-info" href="../Home/Index"> Volver al inicio</a>
+    </div>
+
+    <div class="seccion_3" id="s3">
+
+        <table class="table">
+            <tr>
+                <th> Id</th>
+                <th> Nombre</th>
+                <th> Peso</th>
+                <th> Estatura</th>
+                <th> IMC</th>
+            </tr>
+            @for (int i = 0; i < 30; ++i)
+            {
+            <tr>
+                <th> @ViewBag.personas[i].Id </th>
+                <th> @ViewBag.personas[i].Nombre </th>
+                <th> @ViewBag.personas[i].Peso </th>
+                <th> @ViewBag.personas[i].Estatura </th>
+                @if (ViewBag.IMC[i] >= 18.5 && ViewBag.IMC[i] <= 24.9)
+                {
+                    <th style="color:green">@ViewBag.IMC[i]</th>
+                }
+                else 
+                { 
+                    <th style="color:red">@ViewBag.IMC[i]</th>
+                }
+            </tr>
+            }
+        </table>
+        <hr />
+    </div>
+</body>
+</html>
+

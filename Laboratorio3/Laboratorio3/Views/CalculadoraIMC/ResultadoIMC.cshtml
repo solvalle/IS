@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "IMC";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Resultado IMC </title>
+    <meta charset="utf-8" />
+    <!--Esto es un comentario-->
+    <!--En el head se coloca información que es para el navegador, scripts, css...-->
+</head>
+<body>
+    <!--Aquí inicia el cuerpo de la página que se está creando (la vista)-->
+    <h1> Resultado </h1>
+
+    <div class="seccion_1" id="s1">
+
+        <table class="table-bordered">
+
+            <tr>
+
+                <th> Encabezado 1</th>
+
+                <th> Encabezado 2</th>
+
+                <th> Encabezado 3</th>
+
+            </tr>
+
+            <tr>
+
+                <td>@ViewBag.persona.Nombre</td>
+
+                <td> Fila 1, Columna 2</td>
+
+                <td> Fila 1, Columna 3</td>
+
+            </tr>
+            <tr>
+                <td> Fila 2, Columna 1</td>
+
+                <td> Fila 2, Columna 2</td>
+
+                <td> Fila 2, Columna 3</td>
+
+            </tr>
+        </table>
+        <hr />
+    </div>
+    <div class="seccion_2" id="s2">
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+        <hr />
+    </div>
+    <div class="seccion_3" id="s3">
+        <input type="button" value="Soy un Botón" /> <hr />
+        <a class="btn btn-info"> Soy un link que parece botón</a>
+    </div>
+    <div class="seccion_4">
+        @if (ViewBag.IMC > 20)
+        {
+            <div class="text-success">
+                <p> Mensaje</p>
+            </div>  
+        }
+        else
+        {
+            <div class="text-danger">
+                <p>Otro mensaje</p>
+            </div>
+        }
+    </div>
+
+</body>
+</html>
+
