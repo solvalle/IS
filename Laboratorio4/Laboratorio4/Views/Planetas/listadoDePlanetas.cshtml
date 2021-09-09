@@ -1,29 +1,25 @@
 ﻿@{
-    ViewBag.Title = "Listado de Planetas";
+    ViewBag.Title = "Planetas";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title> Planetas </title>
-    <meta charset="utf-8" />
-    <!--Esto es un comentario-->
-    <!--En el head se coloca información que es para el navegador, scripts, css...-->
-</head>
-<body>
-    <h1> Listado de Planetas </h1>
+<h1>Listado de planetas</h1>
 
-    <div class="seccion_1" id="s1">
-        @for (int i = 0; i < 8; ++i)
-        {
-            <h4> Ficha del Planeta: @(i+1)</h4>
-            <p>Nombre: @ViewBag.planetas[i].nombre</p>
-            <p>Tipo: @ViewBag.planetas[i].tipo</p>
-            <p>Número de anillos: @ViewBag.planetas[i].numeroAnillos</p>
-            <a class="btn btn-info" style="background-color:dodgerblue"> Ver contenido digital</a>
-            <a class="btn btn-info" style="background-color:Tomato"> Modificar Información</a>
-            <hr />
-        }
+@foreach (var planeta in ViewBag.planetas)
+{
+    <hr />
+    <h4> <strong> Ficha del planeta: </strong> @planeta.id </h4>
+    <p>
+        Nombre: @planeta.nombre <br />
+        Tipo: @planeta.tipo <br />
+        Número de anillos: @planeta.numeroAnillos <br />
+    </p>
+    @Html.ActionLink("Modificar información", "editarPlaneta",
+    new { identificador = planeta.id },
+   new
+   {
+       @class = "btn btn alert-info",
+       @onclick = "return confirm('¿Quiere modificar este planeta ? ');"
+   }
+ )
+    <hr />
+}
 
-    </div>
-</body>
-</html>
