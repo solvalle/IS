@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Laboratorio8/Laboratorio8_Valle_Sol.txt
+*.txt
