@@ -1,0 +1,25 @@
+
+li {
+    list-style-type: none;
+}
+
+.special {
+    color: orange;
+    font-weight: bold;
+}
+
+li em {
+    color: rebeccapurple;
+}
+
+a:link {
+    color: pink;
+}
+  
+a:visited {
+    color: green;
+}
+
+a:hover {
+    text-decoration: none;
+}
