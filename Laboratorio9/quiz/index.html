@@ -1,0 +1,49 @@
+<html>
+<head>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1> Simple Math Quiz </h1>
+
+        <hr/> <br/>
+        <div id="chooseQuestions">
+            Enter the number of questions
+            <input id="questionsNum" type="number" max="20" min="5" required> </input>
+            <span id="errorMsg" style="display:none; color: red;"> You can only choose between 5 and 20 questions </span>
+            <br/>
+            <button class="check-button" onclick="generateQuiz()">Generate Quiz</button>
+        </div>
+        <div id="quiz" style="display: none;">
+            <ul id="questionsList" class="tasks"> </ul>
+            <br/>
+            <div>
+                <button id="check-all-btn" class="check-button" onclick="checkAll()"> Check All </button>
+                <button  class="check-button" onclick="checkAll()"> Show answers </button>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="modal"  style="display: none;" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="hideModal()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            
+            <h2><strong>Answers</strong></h2>
+
+            <p> Are you sure you want to check the answers? </p>
+            <button class="check-button" onclick= "checkAnswers()"> Continue </button>
+            <button class="check-button" onclick="hideModal()"> Cancel </button>
+        </div>
+    </div>
+
+    <script src="./js/quizzes.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/quizzes.css" />
+
+</body>
+
+</html>
+
